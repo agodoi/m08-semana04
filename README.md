@@ -41,3 +41,48 @@ Esses sistemas têm aplicações em uma ampla gama de setores, incluindo manufat
 
 Na **Ciência da Computação**, os estudantes e pesquisadores podem se envolver no desenvolvimento de algoritmos, sistemas de controle, comunicação em tempo real e segurança para sistemas ciberfísicos. Portanto, os sistemas ciberfísicos representam um campo empolgante e em crescimento na interseção da Ciência da Computação com outras disciplinas de engenharia.
 
+Sistemas embarcados são sistemas de computação especializados projetados para realizar tarefas específicas ou funções dedicadas. Eles têm várias características distintivas em comparação com sistemas de computação convencionais (como computadores pessoais ou servidores). Aqui estão algumas características dos sistemas embarcados e diferenças em relação aos sistemas convencionais:
+
+## Características dos Sistemas Embarcados
+
+1. **Dedicados a tarefas específicas:** Os sistemas embarcados são projetados para executar uma tarefa ou um conjunto específico de tarefas. Eles não são computadores de propósito geral.
+
+2. **Recursos limitados:** Geralmente, têm recursos de hardware limitados, como poder de processamento, memória e armazenamento, adequados para suas tarefas específicas.
+
+3. **Tamanho compacto:** São frequentemente pequenos e compactos, projetados para caber em dispositivos ou sistemas maiores.
+
+4. **Consumo de energia otimizado:** São projetados para serem eficientes em termos de consumo de energia, uma vez que muitos deles são alimentados por baterias ou fontes de energia limitadas.
+
+5. **Sistemas operacionais dedicados:** Muitas vezes, executam sistemas operacionais dedicados, em vez de sistemas operacionais de propósito geral, para melhor atender às suas necessidades.
+
+6. **Integração de hardware e software:** Hardware e software são altamente integrados para otimizar o desempenho e a eficiência.
+
+7. **Tempo real:** Alguns sistemas embarcados são projetados para operar em tempo real, o que significa que precisam responder a eventos dentro de prazos especificados.
+
+## Diferenças entre Sistemas Embarcados e Convencionais:
+
+1. **Propósito:** Os sistemas embarcados têm um propósito específico, enquanto os sistemas convencionais são projetados para uma ampla variedade de tarefas.
+
+2. **Tamanho e forma:** Os sistemas embarcados são geralmente menores e mais compactos, enquanto os sistemas convencionais, como PCs, podem ser grandes e ter diferentes formatos.
+
+3. **Recursos de hardware:** Os sistemas convencionais têm recursos de hardware mais abundantes, incluindo processadores mais poderosos, mais memória e maior capacidade de armazenamento.
+
+4. **Sistemas operacionais:** Os sistemas convencionais geralmente executam sistemas operacionais de propósito geral, como Windows, Linux ou macOS, enquanto os sistemas embarcados usam sistemas operacionais específicos para suas tarefas.
+
+5. **Consumo de energia:** Os sistemas embarcados são otimizados para baixo consumo de energia, enquanto os sistemas convencionais geralmente têm requisitos de energia mais elevados.
+
+6. **Ampla conectividade:** Os sistemas convencionais frequentemente têm uma ampla gama de opções de conectividade, como Wi-Fi, Ethernet, USB, etc., enquanto os sistemas embarcados podem ter opções limitadas.
+
+7. **Custo:** Os sistemas embarcados podem ser mais econômicos devido ao seu foco em recursos específicos, enquanto os sistemas convencionais podem ser mais caros devido à sua flexibilidade e capacidade de propósito geral.
+
+8. **Complexidade de software:** Os sistemas embarcados tendem a ter software mais especializado e simplificado, enquanto os sistemas convencionais podem executar uma ampla variedade de aplicativos complexos.
+
+## Sensor Greg Maker
+
+## Conversor AD e DA
+
+## Memória empregada
+
+## Interrupções
+
+## Prática com Interrupção
