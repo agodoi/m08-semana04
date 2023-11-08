@@ -16,10 +16,13 @@ Simulação de sistemas embarcados
 
 Sistemas Ciberfísicos, do inglês Cyber-Physical Systems (CPS), compõem uma área interdisciplinar que combina elementos da:
 
-  1- Ciência da Computação;
-  2- Engenharia Elétrica;
-  3- Engenharia Mecânica;
-  4- Engenharia de Controle e Automação
+1) Ciência da Computação;
+
+2) Engenharia Elétrica;
+
+3) Engenharia Mecânica;
+
+4) Engenharia de Controle e Automação
 
 Serve para criar e controlar sistemas integrados que incorporam tanto componentes físicos quanto virtuais. Esses sistemas são projetados para interagir e coordenar de maneira estreita com o mundo físico, tornando-os muito relevantes para o campo da **Ciência da Computação**.
 
