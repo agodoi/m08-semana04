@@ -82,6 +82,85 @@ Sistemas embarcados são sistemas de computação especializados projetados para
 
 ## Sensor Greg Maker
 
+### O modelo que vamos adotar nesse projeto é o Arduino Uno
+
+### Modelo do chip: [atmega32u4](https://www.microchip.com/en-us/product/atmega32u4)
+
+
+## Qual a função do Arduino Uno R3 no projeto?
+
+O projeto AACD é o **desenvolvimento de um compilador para PC "de alto nível"** que será transformado para linguagem Python. Esse Python chamaremos de "baixo nível" que rodará no ambiente Windows.
+
+Esse compilador de alto nível, desenvolvido pelos alunos, deverá **resolver uma gamificação do TO** (Terapeuta Ocupacional) da AACD.
+
+A gamificação contará com a entrada de dados provenientes do [Greg Maker](https://www.gregmaker.com.br/), **que transforma os toques manuais** sobre objetos semicondutores e condutores em **movimentos do mouse e algumas teclas do teclado**, como barra de espaço, ENTER e setas.
+
+**O responsável pela detecção dos toques manuais é o Arduino Uno R3**.
+
+Exemplo: a figura abaixo apresenta alimentos e objetos condutores e semicondutores conectados ao Greg Maker, que ao serem tocados manualmente por uma pessoa com deficiência motora ou cerebral, moverá o mouse na tela do computador, ou pressionará a barra de espaço ou o ENTER ou alguma opção de setas. Vai depender de quais fios foram conectados em cada objeto.
+
+<picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/ProjetoAACD/blob/main/imgs/gregMaker.png">
+   <img alt="Família ESP32" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/ProjetoAACD/blob/main/imgs/gregMaker.png)">
+</picture>
+
+## Diagrama de Blocos da Solução
+
+A figura a seguir demonstra o diagrama de blocos da solução mínima para a fundação AACD. Observe com calma!
+
+**A missão desse projeto está na gamificação para o ambiente Windows e não no Arduino Uno R3**.
+
+O Arduino é somente um sistema embarcado que captura dados de toques e os converte em movimentos do mouse e algumas teclas do teclado.
+
+<picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/ProjetoAACD/blob/main/imgs/ArquiteturaAACD.png">
+   <img alt="Arquitetura AACD" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/ProjetoAACD/blob/main/imgs/ArquiteturaAACD.png)">
+</picture>
+
+## Arduino Uno - Documentação
+
+Nessa instrução, vamos explorar o hardware que converterá os toques manuais nos **trem da mesa :)** em movimentos do mouse e teclado.
+
+[Fonte](https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf)
+
+<picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/ProjetoAACD/blob/main/imgs/arduinoUnoR3.png">
+   <img alt="Arduino Uno R3" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/ProjetoAACD/blob/main/imgs/arduinoUnoR3.png)">
+</picture>
+
+### Esquemático Eletrônico
+
+Na figura a seguir você pode entender com mais profundidade, do que é feita uma placa Arduino Uno R3. 
+
+<picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/ProjetoAACD/blob/main/imgs/Arduino-UNO-Description.png">
+   <img alt="Arduino Uno R3" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/ProjetoAACD/blob/main/imgs/Arduino-UNO-Description.png)">
+</picture>
+
+Perceba que a placa possui dois conectores ICSP (In-Circuit Serial Programming). Ambos servem para programar um chip mesmo já inserido na placa e com todos os componentes eletrônicos em sua volta. [Documentação](https://ww1.microchip.com/downloads/en/DeviceDoc/30277d.pdf). Como há dois chips programáveis no Arduino IDE, um ICSP é do chip USB e o outro ICSP é do Arduino.
+
+O Greg Maker usou o ICSP do chip USB, **chip U3** da figura a seguir para alterar seu firmware e converter a comunicação USB em comandos padronizados de mouse e teclado. É como se o Arduino se comportasse como um adaptador de mouse e teclaso sem fio. Mas o Arduino não sai assim de fábrica. Precisa reprogramar o conversor USB U3 da imagem a seguir. Esse chip conversor USB tem que ser o "quadradinho" e não um retângulo. O retângulo não aceita reprogramação de firmware.
+
+<picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/ProjetoAACD/blob/main/imgs/arduinoUnoR3Esquematico.png">
+   <img alt="Esquemático do Arduino Uno R3" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/ProjetoAACD/blob/main/imgs/arduinoUnoR3Esquematico.png)">
+</picture>
+
+O que tem na placa dessa arquitetura embarcada?
+
+<picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/ProjetoAACD/blob/main/imgs/ArduinoChips.png">
+   <img alt="Esquemático do Arduino Uno R3" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/ProjetoAACD/blob/main/imgs/ArduinoChips.png)">
+</picture>
+
+### Pinout Arduino Uno R3
+
+O pinout (significado de cada pino) é demonstrado na imagem a seguir:
+
+<picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/ProjetoAACD/blob/main/imgs/ArduinoPinout.png">
+   <img alt="Arduino Uno R3" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/ProjetoAACD/blob/main/imgs/ArduinoPinout.png)">
+</picture>
 ## Conversor AD e DA
 
 ## Memória empregada
