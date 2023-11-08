@@ -87,9 +87,9 @@ Greg Maker é um Arduino Uno, modelo do chip: [atmega32u4](https://www.microchip
 
 ### Qual a função do Arduino Uno R3 no projeto?
 
-É transformar os toques manuais sobre objetos semicondutores e condutores em **movimentos do mouse e algumas teclas do teclado**. No mouse, funcina os movimentos da seta, clique do botão esquerdo e menu do botão direito. No teclado, tem-se a barra de espaço, o ENTER e as 4 setas.
+É transformar os toques manuais sobre objetos semicondutores e condutores em **movimentos do mouse e algumas teclas do teclado**. No mouse, funcina os movimentos da seta na tela, clique do botão esquerdo e menu do botão direito. No teclado, tem-se a barra de espaço, o ENTER e as 4 setas.
 
-**O responsável pela detecção dos toques manuais é o Arduino Uno R3**.
+**Portanto, o responsável pela detecção dos toques manuais é o Arduino Uno R3**.
 
 Exemplo: a figura abaixo apresenta alimentos e objetos condutores e semicondutores conectados ao Greg Maker, que ao serem tocados manualmente por uma pessoa com deficiência motora ou cerebral, moverá o mouse na tela do computador, ou pressionará a barra de espaço ou o ENTER ou alguma opção de setas. Vai depender de quais fios foram conectados em cada objeto.
 
@@ -135,6 +135,10 @@ O pinout (significado de cada pino) é demonstrado na imagem a seguir:
 
 Usando essa simulação, temos uma base de como o Greg Maker detecta toques da pela humana.
 
+No fundo, no fundo, ele deve ter um analogRead() que monitora um portal de dados e, que, ao se aproximar do nível baixo **LOW** em sua conversão, ele entende que é um toque e faz a conversão para o mouse ou teclado, a depender de qual entrada você está utilizando.
+
+A seguir, tem-se uma simulação de como o Greg Maker deve funcionar. Não temos certeza, pois é um produto prioprietário.
+
 1) Usando o [TinkerCad](https://www.tinkercad.com/dashboard), puxe um Arduno Uno R3 para a área de desenvolvimento da tela;
   
 3) Clique no botão **código** e altere para **Texto** e confirma numa tela **Continuar**.
@@ -174,6 +178,45 @@ void loop()
 
 ## Conversor AD e DA
 
+O Arduino Uno plataforma de desenvolvimento de microcontroladores que incorpora conversores analógico-digitais (AD) e digitais-analógicos (DA) para facilitar a interação com o mundo real. 
+
+### Características do Conversor Analógico-Digital (AD) do Arduino Uno:
+
+1. Resolução: O Arduino Uno possui um conversor AD de 10 bits, o que significa que ele pode converter uma tensão analógica de entrada em um valor digital de 0 a 1023.
+   Conta --> Combinações = 2^n bits. Então Combinações = 2^10 = 1024 (de 0 a 1023)
+   
+3. Canais: O Arduino Uno possui 6 pinos de entrada analógica (A0 a A5), permitindo que você meça até 6 sinais analógicos diferentes simultaneamente.
+4. Tensão de referência: A placa Arduino Uno permite selecionar a tensão de referência para a conversão analógica, o que é útil para adaptar a faixa de medição ao seu projeto.
+5. Velocidade de conversão: O conversor AD do Arduino Uno é relativamente rápido e pode realizar conversões em microssegundos, dependendo da configuração.
+
+Pontos Positivos:
+1. Facilidade de uso: O conversor AD do Arduino Uno é simples de usar e é amplamente suportado pela comunidade.
+2. Baixo custo: O Arduino Uno é acessível, tornando-o uma ótima opção para projetos com orçamento limitado.
+3. Adequado para muitos aplicativos: A resolução de 10 bits é suficiente para muitas aplicações, como leitura de sensores, controle de motores e outros projetos de automação.
+
+Pontos Negativos:
+1. Baixa resolução: A resolução de 10 bits pode ser insuficiente para aplicações que exigem alta precisão.
+2. Sensibilidade a ruído: O conversor AD do Arduino Uno pode ser sensível a ruído elétrico, o que pode afetar a qualidade das leituras.
+3. Limitado a sinais analógicos: O Arduino Uno não é adequado para aplicações que requerem processamento de sinal analógico em tempo real, como áudio de alta fidelidade.
+
+Conversor Digital-Analógico (DA) do Arduino Uno:
+
+Características:
+1. Resolução: O Arduino Uno utiliza um conversor DA de 8 bits para gerar sinais analógicos.
+2. Saída PWM: O Arduino Uno utiliza a modulação por largura de pulso (PWM) para simular saídas analógicas em alguns de seus pinos digitais.
+3. Fácil controle: A biblioteca do Arduino fornece funções simples para gerar saídas analógicas.
+
+Pontos Positivos:
+1. Simplicidade: O conversor DA do Arduino Uno é fácil de usar e é adequado para muitas aplicações básicas que requerem saídas analógicas.
+2. Custo acessível: O Arduino Uno é uma opção econômica para projetos com requisitos de saída analógica limitados.
+3. Suporte da comunidade: Como o Arduino é amplamente adotado, você encontrará muitos recursos e exemplos disponíveis.
+
+Pontos Negativos:
+1. Baixa resolução: A resolução de 8 bits limita a precisão das saídas analógicas.
+2. Limitações de frequência: O sinal de saída PWM tem limitações em termos de frequência e pode não ser adequado para todas as aplicações.
+3. Não é um conversor verdadeiro: O Arduino Uno não possui um conversor DA real, o que limita sua capacidade de gerar sinais analógicos com alta precisão.
+
+Em resumo, o conversor AD e DA do Arduino Uno são recursos úteis para muitos projetos, mas eles têm limitações em termos de resolução e precisão. Para aplicações que requerem maior qualidade de conversão analógica, é necessário considerar outras placas ou módulos com conversores AD e DA mais avançados.
 
 
 ## Memória empregada
