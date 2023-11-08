@@ -188,34 +188,46 @@ O Arduino Uno plataforma de desenvolvimento de microcontroladores que incorpora 
    
 2. Canais: O Arduino Uno possui 6 pinos de entrada analógica (A0 a A5), permitindo que você meça até 6 sinais analógicos diferentes simultaneamente.
 
-4. Tensão de referência: A placa Arduino Uno permite selecionar a tensão de referência para a conversão analógica, o que é útil para adaptar a faixa de medição ao seu projeto.
-5. Velocidade de conversão: O conversor AD do Arduino Uno é relativamente rápido e pode realizar conversões em microssegundos, dependendo da configuração.
+3. Tensão de referência: A placa Arduino Uno permite selecionar a tensão de referência para a conversão analógica, o que é útil para adaptar a faixa de medição ao seu projeto. O limite máximo é de 5V.
+   
+4. Velocidade de conversão: O conversor AD do Arduino Uno é relativamente rápido e pode realizar conversões em microssegundos, dependendo da configuração.
 
-Pontos Positivos:
-1. Facilidade de uso: O conversor AD do Arduino Uno é simples de usar e é amplamente suportado pela comunidade.
-2. Baixo custo: O Arduino Uno é acessível, tornando-o uma ótima opção para projetos com orçamento limitado.
+**Pontos Positivos:**
+
+1. Facilidade de uso: O conversor AD do Arduino Uno é simples de usar e é amplamente suportado pela comunidade;
+2. Baixo custo: O Arduino Uno é acessível, tornando-o uma ótima opção para projetos com orçamento limitado;
 3. Adequado para muitos aplicativos: A resolução de 10 bits é suficiente para muitas aplicações, como leitura de sensores, controle de motores e outros projetos de automação.
 
-Pontos Negativos:
-1. Baixa resolução: A resolução de 10 bits pode ser insuficiente para aplicações que exigem alta precisão.
-2. Sensibilidade a ruído: O conversor AD do Arduino Uno pode ser sensível a ruído elétrico, o que pode afetar a qualidade das leituras.
+**Pontos Negativos:**
+
+1. Baixa resolução: A resolução de 10 bits pode ser insuficiente para aplicações que exigem alta precisão. Exemplo: medir um sinal de balança, que trabalha na casa de 2 a 5 milivolts;
+   
+2. Sensibilidade a ruído: O conversor AD do Arduino Uno pode ser sensível a ruído elétrico, o que pode afetar a qualidade das leituras. Para reduzir, use capacitores de aterramento ou gaiola de Faraday;
+
 3. Limitado a sinais analógicos: O Arduino Uno não é adequado para aplicações que requerem processamento de sinal analógico em tempo real, como áudio de alta fidelidade.
 
-Conversor Digital-Analógico (DA) do Arduino Uno:
+### Características do Conversor Digital-Analógico (DA) do Arduino Uno:
 
-Características:
-1. Resolução: O Arduino Uno utiliza um conversor DA de 8 bits para gerar sinais analógicos.
-2. Saída PWM: O Arduino Uno utiliza a modulação por largura de pulso (PWM) para simular saídas analógicas em alguns de seus pinos digitais.
+1. Resolução: O Arduino Uno utiliza um conversor DA de 8 bits para gerar sinais analógicos;
+
+2. Saída PWM: O Arduino Uno utiliza a modulação por largura de pulso (PWM) para simular saídas analógicas em alguns de seus pinos digitais;
+
 3. Fácil controle: A biblioteca do Arduino fornece funções simples para gerar saídas analógicas.
 
-Pontos Positivos:
+**Pontos Positivos:**
+
 1. Simplicidade: O conversor DA do Arduino Uno é fácil de usar e é adequado para muitas aplicações básicas que requerem saídas analógicas.
+
 2. Custo acessível: O Arduino Uno é uma opção econômica para projetos com requisitos de saída analógica limitados.
+
 3. Suporte da comunidade: Como o Arduino é amplamente adotado, você encontrará muitos recursos e exemplos disponíveis.
 
-Pontos Negativos:
+**Pontos Negativos:**
+
 1. Baixa resolução: A resolução de 8 bits limita a precisão das saídas analógicas.
+
 2. Limitações de frequência: O sinal de saída PWM tem limitações em termos de frequência e pode não ser adequado para todas as aplicações.
+
 3. Não é um conversor verdadeiro: O Arduino Uno não possui um conversor DA real, o que limita sua capacidade de gerar sinais analógicos com alta precisão.
 
 Em resumo, o conversor AD e DA do Arduino Uno são recursos úteis para muitos projetos, mas eles têm limitações em termos de resolução e precisão. Para aplicações que requerem maior qualidade de conversão analógica, é necessário considerar outras placas ou módulos com conversores AD e DA mais avançados.
@@ -223,6 +235,131 @@ Em resumo, o conversor AD e DA do Arduino Uno são recursos úteis para muitos p
 
 ## Memória empregada
 
+O uso de memória e o endereçamento de memória desempenham um papel importante ao trabalhar com o conversor analógico-digital (AD) e o conversor digital-analógico (DA) do Arduino Uno. Vamos entender como a memória é alocada e endereçada ao usar esses conversores, bem como destacar os pontos positivos e negativos associados a esse aspecto.
+
+**Uso de Memória com o Conversor AD:**
+
+Quando você utiliza o conversor AD do Arduino Uno, a memória é alocada principalmente para armazenar as leituras analógicas e os dados relacionados à configuração. Aqui estão os principais componentes de memória relacionados ao conversor AD:
+
+1. **Buffer de Leitura:** O Arduino Uno tem um buffer de leitura de 2 bytes (16 bits) para cada um dos 6 pinos analógicos (A0 a A5). Isso permite armazenar temporariamente os valores convertidos antes que você os acesse em seu código.
+
+2. **Configurações de Referência e Resolução:** As configurações de referência, resolução e outros parâmetros do conversor AD são armazenados em memória, mas ocupam uma quantidade mínima de espaço.
+
+**Pontos Positivos do Uso de Memória com o Conversor AD:**
+
+1. **Economia de espaço:** O Arduino Uno alocou uma quantidade razoável de memória para os buffers de leitura, tornando mais fácil armazenar e processar leituras analógicas.
+   
+2. **Facilidade de acesso:** Os valores lidos nos pinos analógicos podem ser acessados facilmente em seu código, tornando a programação mais simples.
+
+**Pontos Negativos do Uso de Memória com o Conversor AD:**
+
+1. **Limitação de buffer:** O buffer de leitura é limitado a 2 bytes por pino, o que pode ser insuficiente se você estiver amostrando sinais analógicos rapidamente ou se precisar armazenar muitos dados.
+   
+2. **Potencial de desperdício:** Se você não usar todos os pinos analógicos, parte da memória alocada para buffers de leitura pode ser desperdiçada.
+
+**Endereçamento de Memória com o Conversor DA:**
+
+Ao usar o conversor DA do Arduino Uno, a memória é usada principalmente para armazenar tabelas de valores que representam a forma da onda analógica que você deseja gerar. Aqui estão os principais componentes de memória relacionados ao conversor DA:
+
+1. **Tabelas de Valores (Look-up Tables):** Para gerar sinais analógicos com o conversor DA, você precisa armazenar uma tabela de valores digitais que representam a forma da onda desejada. Esses valores são armazenados na memória do programa, geralmente na forma de arrays.
+
+2. **Temporizadores e Interrupções:** Em alguns casos, temporizadores e interrupções podem ser usados para controlar a taxa de atualização do sinal analógico gerado, o que também envolve o uso de memória.
+
+**Pontos Positivos do Endereçamento de Memória com o Conversor DA:**
+
+1. **Flexibilidade na Geração de Sinais:** Usando tabelas de valores, você pode criar uma ampla variedade de formas de onda personalizadas, o que oferece grande flexibilidade para aplicações que requerem saídas analógicas complexas.
+
+2. **Controle de Tempo:** Ao usar temporizadores e interrupções, você pode controlar precisamente a taxa de atualização do sinal analógico, permitindo ajustes finos na frequência e amplitude.
+
+**Pontos Negativos do Endereçamento de Memória com o Conversor DA:**
+
+1. **Consumo de Memória:** Tabelas de valores podem ocupar uma quantidade significativa de memória, especialmente se você estiver gerando formas de onda complexas ou de alta resolução.
+   
+2. **Complexidade de Programação:** O uso de temporizadores e interrupções para controlar a saída analógica pode tornar o código mais complexo, requerendo um conhecimento mais avançado de programação.
+
+É essencial equilibrar as necessidades de armazenamento de dados com a eficiência do programa e a complexidade do código, a fim de desenvolver com sucesso projetos que envolvem esses conversores.
+
 ## Interrupções
 
+As interrupções no Arduino Uno são uma característica essencial para lidar com eventos externos que requerem uma resposta imediata, enquanto o microcontrolador executa tarefas regulares. 
+
+Elas permitem que o Arduino interrompa sua rotina principal de execução para lidar com eventos específicos, como pulsos de sensores, sinais de botões ou outros eventos de entrada.
+
+**Como Funcionam as Interrupções no Arduino Uno:**
+
+1. **Fontes de Interrupção:** O Arduino Uno possui várias fontes de interrupção, como pinos digitais específicos que podem ser configurados para acionar uma interrupção quando uma mudança de estado é detectada, como borda de subida (rising), borda de descida (falling), ou mudança (change) no nível lógico. Além disso, as interrupções podem ser geradas por temporizadores e contadores do Arduino Uno.
+
+2. **Prioridade e Tratamento:** As interrupções têm uma prioridade associada a elas, e o Arduino Uno executa a rotina de tratamento da interrupção imediatamente quando a fonte de interrupção específica é acionada. Essa rotina de tratamento é definida pelo programador e é executada rapidamente antes de retornar à tarefa principal.
+
+3. **Biblioteca e Funções:** O Arduino IDE fornece funções e bibliotecas que facilitam a configuração e uso de interrupções. Isso torna a programação de interrupções mais acessível para desenvolvedores, mesmo aqueles sem um profundo conhecimento de microcontroladores.
+
+**Pontos Positivos das Interrupções:**
+
+1. **Responsividade:** As interrupções permitem que o Arduino Uno responda rapidamente a eventos externos sem precisar monitorar constantemente as entradas. Isso é particularmente útil em aplicações que envolvem sensores e eventos imprevisíveis.
+
+2. **Eficiência de Energia:** O uso de interrupções permite que o microcontrolador entre em um modo de economia de energia quando não há eventos a serem tratados, economizando energia em aplicações alimentadas por bateria.
+
+3. **Temporização Precisa:** Interrupções são ideais para criar temporizações precisas e para executar ações em momentos específicos, como gerar pulsos PWM ou ler sensores em intervalos regulares.
+
+**Pontos Negativos das Interrupções:**
+
+1. **Complexidade do Código:** A programação com interrupções pode ser mais complexa do que a programação sequencial, uma vez que você precisa gerenciar o fluxo de controle entre a rotina principal e as rotinas de interrupção.
+
+2. **Condições de Corrida:** Ao usar interrupções, é possível que ocorram condições de corrida, onde a rotina principal e a rotina de interrupção podem tentar acessar os mesmos recursos simultaneamente, levando a resultados inesperados. Isso requer cuidado na programação para evitar conflitos.
+
+3. **Consumo de Memória:** A implementação de rotinas de tratamento de interrupção pode aumentar o consumo de memória, especialmente em projetos com várias fontes de interrupção. É importante equilibrar o uso de interrupções com as restrições de memória do Arduino Uno.
+
 ## Prática com Interrupção
+
+Para explorar a função de interrupção do ESP32 em um projeto no WokWi, você pode criar um circuito que utilize um sensor de movimento PIR (Passive Infrared Sensor) para detectar movimento e disparar uma interrupção quando o sensor for acionado. Vou guiá-lo através de um projeto que faz exatamente isso:
+
+**Componentes Necessários:**
+
+1. ESP32 no WokWi (simulação online).
+2. Sensor de movimento PIR (disponível no WokWi).
+
+**Passos do Projeto:**
+
+1. Abra o [WokWi](https://wokwi.com/), faça seu login usando uma conta Google e inicie um novo projeto com o ESP32 buscando por **Starter Templates**
+
+2. Clique no botão **+** do WokWi e edicione o sensor de movimento PIR digitando o seu nome. O sensor PIR geralmente possui três pinos: VCC (alimentação), GND (terra) e OUT (saída).
+   
+3. Conecte VCC ao pino 3.3V do ESP32, GND ao GND do ESP32 e OUT a um pino de entrada digital que você deseja usar como fonte de interrupção, por exemplo, o pino D2.
+
+5. Configure o pino D2 como pino de entrada digital no código.
+
+```cpp
+const int pirPin = 2;  // Pino de entrada do sensor PIR
+```
+
+4. Configure a função de interrupção para o pino D2. Isso permitirá que o ESP32 seja interrompido sempre que o sensor PIR detectar movimento.
+
+```cpp
+void IRAM_ATTR handleInterrupt() {
+  // Lidar com a interrupção aqui
+}
+```
+
+5. No `setup()`, configure o pino D2 para ser uma fonte de interrupção de borda de subida (rising edge) e associe a função de interrupção a esse pino.
+
+```cpp
+void setup() {
+  pinMode(pirPin, INPUT);
+  attachInterrupt(digitalPinToInterrupt(pirPin), handleInterrupt, RISING);
+  Serial.begin(115200);
+}
+```
+
+6. No `loop()`, você pode imprimir uma mensagem toda vez que o sensor PIR detectar movimento. Isso demonstrará o uso da interrupção.
+
+```cpp
+void loop() {
+  // O loop principal pode realizar outras tarefas
+  delay(1000);
+}
+
+```
+
+Agora, quando o sensor PIR detectar movimento, ele acionará a interrupção associada ao pino D2, e a função `handleInterrupt` será chamada, exibindo uma mensagem no console serial.
+
+Este projeto demonstra como usar uma interrupção com o sensor PIR no ESP32 no WokWi. Quando o sensor detectar movimento, ele irá interromper o loop principal para lidar com o evento de detecção. Isso é útil para economizar energia e recursos quando você deseja responder imediatamente a eventos externos, como o movimento detectado pelo sensor PIR. Certifique-se de adaptar o código e o circuito para suas necessidades específicas, e aproveite a funcionalidade de interrupção do ESP32 em seus projetos.
