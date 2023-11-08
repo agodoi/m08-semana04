@@ -184,7 +184,7 @@ O Arduino Uno plataforma de desenvolvimento de microcontroladores que incorpora 
 
 1. Resolução: O Arduino Uno possui um conversor AD de 10 bits, o que significa que ele pode converter uma tensão analógica de entrada em um valor digital de 0 a 1023.
 
-   - A matemática do trem é o seguinte: ```N_combinações = 2^n bits```. Então ```N_Combinações = 2^10 = 1024``` (de 0 a 1023)
+   - A matemática do **trem** é o seguinte: ```N_combinações = 2^n bits```. Então ```N_Combinações = 2^10 = 1024``` (de 0 a 1023).
    
 2. Canais: O Arduino Uno possui 6 pinos de entrada analógica (A0 a A5), permitindo que você meça até 6 sinais analógicos diferentes simultaneamente.
 
