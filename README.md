@@ -378,4 +378,4 @@ Seu projeto precisa ficar igual a esse [WokWi](https://wokwi.com/projects/380848
 
 2) Você também viu a importância de um AD e DA para que o microcontrolador possa interagir com sensores e atuadores. Lembre-se! Nós humanos, somos analógicos, mas as máquinas são digitais e o AD e DA sãop as pontes para nos conectar com elas.
    
-3) O seu projeto usa uma plataforma chamada Greg Maker, que é na verdade, um microcontrolador Arduino Uno. 
+3) O seu projeto usa uma plataforma chamada Greg Maker, que é na verdade, um microcontrolador Arduino Uno, e a interface dele, é um sensor tipo umidade, que pega a umidade (ou a condutividade) da pele humana e transforma em movimentos do mouse ou teclas do teclado.
