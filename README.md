@@ -328,38 +328,45 @@ Para explorar a função de interrupção do ESP32 em um projeto no WokWi, você
 
 5. Configure o pino D2 como pino de entrada digital no código.
 
-```cpp
+```
 const int pirPin = 2;  // Pino de entrada do sensor PIR
 ```
 
-4. Configure a função de interrupção para o pino D2. Isso permitirá que o ESP32 seja interrompido sempre que o sensor PIR detectar movimento.
+4. Configure a função de interrupção para o pino 19. Isso permitirá que o ESP32 seja interrompido sempre que o sensor PIR detectar movimento. Quando a interrupção for executada, um LED acenderá e uma mensagem no monitor serial será impressa. Note que a qualquer momento que você mexer no sensor, a interrupção será atendida, mesmo com a presença do **delay** (que trava o processador).
 
-```cpp
+```
+const int led =5;
+const int pir =19;
+
 void IRAM_ATTR handleInterrupt() {
-  // Lidar com a interrupção aqui
-}
-```
-
-5. No `setup()`, configure o pino D2 para ser uma fonte de interrupção de borda de subida (rising edge) e associe a função de interrupção a esse pino.
-
-```cpp
-void setup() {
-  pinMode(pirPin, INPUT);
-  attachInterrupt(digitalPinToInterrupt(pirPin), handleInterrupt, RISING);
-  Serial.begin(115200);
-}
-```
-
-6. No `loop()`, você pode imprimir uma mensagem toda vez que o sensor PIR detectar movimento. Isso demonstrará o uso da interrupção.
-
-```cpp
-void loop() {
-  // O loop principal pode realizar outras tarefas
-  delay(1000);
+  Serial.println("Interrupção executada");
 }
 
+
+void setup(){
+  pinMode(led,OUTPUT);
+  pinMode(pir,INPUT);
+  Serial.begin(9600);
+  attachInterrupt(digitalPinToInterrupt(pir), handleInterrupt, RISING);
+}
+void loop(){
+  const int IP=digitalRead(pir);
+  Serial.println(IP);
+  delay(100);
+  if(IP==1){
+    digitalWrite(led,HIGH);
+    delay(1000);  
+  }
+  else{
+    digitalWrite(led,LOW);
+    delay(1000);  
+  
+  }
+}
 ```
 
 Agora, quando o sensor PIR detectar movimento, ele acionará a interrupção associada ao pino D2, e a função `handleInterrupt` será chamada, exibindo uma mensagem no console serial.
 
 Este projeto demonstra como usar uma interrupção com o sensor PIR no ESP32 no WokWi. Quando o sensor detectar movimento, ele irá interromper o loop principal para lidar com o evento de detecção. Isso é útil para economizar energia e recursos quando você deseja responder imediatamente a eventos externos, como o movimento detectado pelo sensor PIR. Certifique-se de adaptar o código e o circuito para suas necessidades específicas, e aproveite a funcionalidade de interrupção do ESP32 em seus projetos.
+
+Seu projeto precisa ficar igual a esse [WokWi](https://wokwi.com/projects/380848293751158785) 
