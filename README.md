@@ -370,3 +370,12 @@ Agora, quando o sensor PIR detectar movimento, ele acionará a interrupção ass
 Este projeto demonstra como usar uma interrupção com o sensor PIR no ESP32 no WokWi. Quando o sensor detectar movimento, ele irá interromper o loop principal para lidar com o evento de detecção. Isso é útil para economizar energia e recursos quando você deseja responder imediatamente a eventos externos, como o movimento detectado pelo sensor PIR. Certifique-se de adaptar o código e o circuito para suas necessidades específicas, e aproveite a funcionalidade de interrupção do ESP32 em seus projetos.
 
 Seu projeto precisa ficar igual a esse [WokWi](https://wokwi.com/projects/380848293751158785) 
+
+
+# Conclusões
+
+1) Você viu a importância que uma interrupção tem em um sistema embarcado. Agora pare e pense! Onde mais você colocaria uma interrupção no seu projeto?
+
+2) Você também viu a importância de um AD e DA para que o microcontrolador possa interagir com sensores e atuadores. Lembre-se! Nós humanos, somos analógicos, mas as máquinas são digitais e o AD e DA sãop as pontes para nos conectar com elas.
+   
+3) O seu projeto usa uma plataforma chamada Greg Maker, que é na verdade, um microcontrolador Arduino Uno. 
