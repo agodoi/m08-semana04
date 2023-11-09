@@ -366,3 +366,13 @@ Seu projeto precisa ficar igual a esse [WokWi](https://wokwi.com/projects/380848
 2) Você também viu a importância de um AD e DA para que o microcontrolador possa interagir com sensores e atuadores. Lembre-se! Nós humanos, somos analógicos, mas as máquinas são digitais e o AD e DA sãop as pontes para nos conectar com elas.
    
 3) O seu projeto usa uma plataforma chamada Greg Maker, que é na verdade, um microcontrolador Arduino Uno, e a interface dele, é um sensor tipo umidade, que pega a umidade (ou a condutividade) da pele humana e transforma em movimentos do mouse ou teclas do teclado.
+
+# Dicas da Ponderada da Semana
+
+1) Usanso o Rapberry Pi Pico, instale a IDE de programação em Python chanmada [Thonny](https://thonny.org/) no seu computador;
+ 
+3) Nesse caso, você estará usando a interface serial UART (pinos TX e RX da Rasp conectadas na porta USB do PC);
+
+5) Agora pense numa ideia para dar sentindo nessa comunicação, como por exemplo, a leitura de um sensor ou botão pela Rasp e uma impressão de dados ou mensagem no monitor serial da IDE Thonny.
+
+   
