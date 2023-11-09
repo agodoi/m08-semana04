@@ -369,7 +369,7 @@ Seu projeto precisa ficar igual a esse [WokWi](https://wokwi.com/projects/380848
 
 # Dicas da Ponderada da Semana
 
-1) Usanso o Rapberry Pi Pico, instale a IDE de programação em Python chanmada [Thonny](https://thonny.org/) no seu computador;
+1) Usando o Rapberry Pi Pico, instale a IDE de programação em Python chamada [Thonny](https://thonny.org/) no seu computador;
  
 2) Nesse caso, você estará usando a interface serial UART (pinos TX e RX da Rasp conectadas na porta USB do PC);
 
@@ -377,7 +377,7 @@ Seu projeto precisa ficar igual a esse [WokWi](https://wokwi.com/projects/380848
 
 4) Ponderada em dupla, mas cada aluno da dupla precisa mover o seu card e cada aluno deve informar no seu campo de descrição da Adalove quem é o responsável pela postagem, mas um integrante de grupo posta o link do PDF na Adalove. Os dois da dupla não precisam postar o mesmo PDF, mas precisam informar o nome do outro integrante no campo de descrição da Adalove.
 
-5) A dupla deve desenvolver a documentação necessária que comprove sua experiência e postar o link do PDF na Adalove.
+5) A dupla deve desenvolver a documentação necessária que comprove sua experiência e postar o link do PDF na Adalove. Tirar uma foto do projeto prático e desenvolver a programação.
  
 6) Pegue um microcontrolador no lab com o laboratorista e devolva no final dessa ponderada.
 
