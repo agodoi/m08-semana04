@@ -375,6 +375,10 @@ Seu projeto precisa ficar igual a esse [WokWi](https://wokwi.com/projects/380848
 
 3) Agora pense numa ideia para dar sentindo nessa comunicação, como por exemplo, a leitura de um sensor ou botão pela Rasp e uma impressão de dados ou mensagem no monitor serial da IDE Thonny.
 
-4) Ponderada em dupla, mas cada aluno da dupla precisa mover o seu card e cada aluno deve informar no seu campo de descrição da Adalove quem é o responsável pela postagem.
+4) Ponderada em dupla, mas cada aluno da dupla precisa mover o seu card e cada aluno deve informar no seu campo de descrição da Adalove quem é o responsável pela postagem, mas um integrante de grupo posta o link do PDF na Adalove. Os dois da dupla não precisam postar o mesmo PDF, mas precisam informar o nome do outro integrante no campo de descrição da Adalove.
 
 5) A dupla deve desenvolver a documentação necessária que comprove sua experiência e postar o link do PDF na Adalove.
+ 
+6) Pegue um microcontrolador no lab com o laboratorista e devolva no final dessa ponderada.
+
+7) Prazo de entrega: até 23h59 da quarta-feira, dia 15/nov.
